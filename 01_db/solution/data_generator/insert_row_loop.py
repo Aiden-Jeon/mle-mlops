@@ -4,6 +4,22 @@ import psycopg2
 from sklearn.datasets import load_iris
 
 
+def create_table(db_connect):
+    create_table_query = """
+    CREATE TABLE IF NOT EXISTS iris_data (
+        id SERIAL PRIMARY KEY,
+        sepal_width float8,
+        sepal_length float8,
+        petal_width float8,
+        petal_length float8,
+        target int
+    );"""
+    print(create_table_query)
+    with db_connect.cursor() as cur:
+        cur.execute(create_table_query)
+        db_connect.commit()
+
+
 def get_data():
     X, y = load_iris(return_X_y=True, as_frame=True)
     df = pd.concat([X, y], axis="columns")
@@ -36,6 +52,7 @@ def insert_row(db_connect, data):
 
 
 def insert_row_loop(db_connect, df):
+    create_table(db_connect)
     while True:
         insert_row(db_connect, df.sample(1))
         time.sleep(5)
