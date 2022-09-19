@@ -66,4 +66,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     db_connect = psycopg2.connect(host=args.host, database="postgres", user="postgres", password="mypassword")
     df = get_data()
-    insert_row_loop(db_connect, df.sample(1))
+    insert_row_loop(db_connect, df)
