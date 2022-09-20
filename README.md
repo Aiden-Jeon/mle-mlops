@@ -3,3 +3,4 @@
 
 ## Index
 1. [Chapter 01) Database](01_db/README.md)
+2. [Chapter 02) Model Registry](02_model_registry/README.md)
