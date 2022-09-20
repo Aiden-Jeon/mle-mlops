@@ -1,7 +1,21 @@
 import os
+
 import mlflow
+from sklearn.datasets import load_iris
 
 os.makedirs("download", exist_ok=True)
+
+
+def get_sample():
+    df, _ = load_iris(return_X_y=True, as_frame=True)
+    rename_rule = {
+        "sepal length (cm)": "sepal_width",
+        "sepal width (cm)": "sepal_length",
+        "petal length (cm)": "petal_width",
+        "petal width (cm)": "petal_length",
+    }
+    df = df.rename(columns=rename_rule)
+    return df.sample(1)
 
 
 def download_model(run_id):
@@ -24,6 +38,11 @@ if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument("--run-id", type=str)
     args = parser.parse_args()
-    
+
     dst_path = download_model(args.run_id)
     model = load_model(dst_path)
+
+    sample = get_sample()
+    print(sample)
+    pred = model.predict(sample)
+    print(pred)
