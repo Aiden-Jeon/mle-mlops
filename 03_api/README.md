@@ -104,6 +104,7 @@
         - id는 memory에 들어있는 length를 반환합니다.
         - eg) 첫 번째 입력값의 id는 0입니다.
 5. create 함수의 반환 값을 ResponseModel로 수정합니다.
+6. Pydantic으로 작성하기 전과 후의 api의 차이점을 비교합니다.
 
 ---
 ## 4. FastAPI + Postgresql
@@ -120,7 +121,8 @@
     1. ORM(Object Relational Mapping) 에 대해서 알아봅니다. [[ORMs](https://fastapi.tiangolo.com/tutorial/sql-databases/?h=pydantic#orms)]
     2. `database.py` 파일을 생성합니다.[[File Structure](https://fastapi.tiangolo.com/tutorial/sql-databases/?h=pydantic#file-structure)]
         - 튜토리얼을 따라 postgresql 과 연결할 수 있는 session_maker를 작성합니다. [[Create the SQLAlchemy parts](https://fastapi.tiangolo.com/tutorial/sql-databases/?h=pydantic#create-the-sqlalchemy-parts)]
-    3. `[models.py](http://models.py)` 파일을 생성합니다.
+    3. `models.py` 파일을 생성합니다.
+        - tablename은 `users`로 합니다.
         - 튜토리얼을 따라 postgresql 에서 사용하는 모델을 생성합니다. [[Create the database model](https://fastapi.tiangolo.com/tutorial/sql-databases/?h=pydantic#create-the-database-models)]
         
         | Column | Type | Key |
@@ -128,7 +130,7 @@
         | id | Integer | Primary, Index |
         | name | String | Unique, Index |
         | nickname | String |  |
-    4. `[schema.py](http://schema.py)` 파일을 생성합니다. [[create-pydantic-models-schemas-for-reading-returning](https://fastapi.tiangolo.com/tutorial/sql-databases/?h=pydantic#create-pydantic-models-schemas-for-reading-returning)]
+    4. `schemas.py` 파일을 생성합니다. [[create-pydantic-models-schemas-for-reading-returning](https://fastapi.tiangolo.com/tutorial/sql-databases/?h=pydantic#create-pydantic-models-schemas-for-reading-returning)]
     5. `crud.py` 파일을 생성 후 아래 함수를 작성합니다. [[Crud Utils](https://fastapi.tiangolo.com/tutorial/sql-databases/?h=pydantic#crud-utils)]
         - `get_user`
         - `creat_user`
