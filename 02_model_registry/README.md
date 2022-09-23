@@ -1,4 +1,5 @@
 # Chapter 02) Model Registry
+---
 ## 1. MLFlow Server 띄우기
 ### 목표
 
@@ -11,6 +12,7 @@
     - mlflow server는 “3.모델 학습 및 저장” 와 작성할 스크립트와 같은 디렉토리에서 실행되어야 합니다.
 2. mlflow ui website를 확인합니다.
 
+---
 ## 2. 데이터 추출
 ### 목표
 
@@ -22,6 +24,7 @@
 2. `id` column을 기준으로 최신 데이터 100개를 추출하는 쿼리문을 작성합니다.
 3. 데이터를 추출합니다.
 
+---
 ## 3. 모델 학습 및 저장
 
 ### 목표
@@ -56,6 +59,7 @@
 3. 저장된 모델을 mlflow website에서 확인합니다.
     - 모델이 어떻게 저장되어 있는지 확인합니다. [[MLFlow Storage Format](https://www.mlflow.org/docs/latest/models.html#storage-format)]
 
+---
 ## 4. Download Model from MLFlow
 
 ### 목표

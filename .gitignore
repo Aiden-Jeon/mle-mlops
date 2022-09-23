@@ -1,5 +1,7 @@
 # custom
 .envrc
+download/
+mlruns/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -1,4 +1,5 @@
 # Chapter 01) Database
+---
 ## 1. Postgresql Server 띄우기
 ### 목표
 
@@ -23,7 +24,7 @@
 4. psql 내부에서 다음 내용을 확인합니다.
     - 생성한 Role name 과 role
 
-
+---
 ## 2. Create Table & Insert row
 ### 목표
 
@@ -49,6 +50,7 @@
 3. psycopg2 를 사용해 iris 데이터 하나를 삽입해 봅시다.
 4. `psql` 등을 이용해 생성한 테이블과 삽입한 데이터를 확인합니다.
 
+---
 ## 3. DB에 계속해서 데이터 삽입하기
 ### 목표
 
@@ -59,6 +61,7 @@
 1. 앞서 작성한 스크립트를 기반으로 5초마다 iris 데이터 하나를 삽입하는 python script를 작성합니다.
 2. `psql` 등을 이용해 데이터가 계속해서 삽입되고 있는지 확인합니다.
 
+---
 ## 4. Write Dockerfile & Build Image
 ### 목표
 

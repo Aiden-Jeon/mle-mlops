@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: "mypassword"
+  app:
+    platform: linux/amd64
+    build: ./
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      - SQLALCHEMY_DATABASE_URL=postgresql://postgres:mypassword@db:5432/postgres
