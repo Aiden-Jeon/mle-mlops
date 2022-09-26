@@ -5,16 +5,8 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_PASSWORD: "mypassword"
-    networks:
-    - my-network
   data-generator:
     platform: linux/amd64
     build: data_generator/
     command:
       - "db"
-    networks:
-    - my-network
-
-networks:
-  my-network:
-    driver: bridge
