@@ -5,3 +5,4 @@
 1. [Chapter 01) Database](01_db/README.md)
 2. [Chapter 02) Model Registry](02_model_registry/README.md)
 3. [Chapter 03) API](03_api/README.md)
+4. [Chapter 04) Model API](04_model_api/README.md)
